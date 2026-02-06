@@ -16,8 +16,8 @@ jobs:
             tags: |
               yrorixw/rwnode:latest
               yrorixw/rwnode:${{github.ref_name}}
-              ghcr.io/YroriXW/rwnode:latest
-              ghcr.io/YroriXW/rwnode:${{github.ref_name}}
+              ghcr.io/yrorixw/rwnode:latest
+              ghcr.io/yrorixw/rwnode:${{github.ref_name}}
             build_args: ''
 
     steps:
@@ -84,8 +84,8 @@ jobs:
 
             Latest Docker image:
             - `yrorixw/rwnode:latest`
-            - `ghcr.io/YroriXW/rwnode:latest`
+            - `ghcr.io/yrorixw/rwnode:latest`
 
             Docker images:
             - `yrorixw/rwnode:${{github.ref_name}}`
-            - `ghcr.io/YroriXW/rwnode:${{github.ref_name}}`
+            - `ghcr.io/yrorixw/rwnode:${{github.ref_name}}`
