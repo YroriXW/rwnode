@@ -14,10 +14,10 @@ jobs:
         image:
           - name: 'Core Latest'
             tags: |
-              remnawave/node:latest
-              remnawave/node:${{github.ref_name}}
-              ghcr.io/remnawave/node:latest
-              ghcr.io/remnawave/node:${{github.ref_name}}
+              yrorixw/rwnode:latest
+              yrorixw/rwnode:${{github.ref_name}}
+              ghcr.io/YroriXW/rwnode:latest
+              ghcr.io/YroriXW/rwnode:${{github.ref_name}}
             build_args: ''
 
     steps:
@@ -83,9 +83,9 @@ jobs:
             📝 Compare changes: [${{ steps.tag.outputs.previousTag }}...${{ steps.tag.outputs.latestTag }}](https://github.com/${{ github.repository }}/compare/${{ steps.tag.outputs.previousTag }}...${{ steps.tag.outputs.latestTag }})
 
             Latest Docker image:
-            - `remnawave/node:latest`
-            - `ghcr.io/remnawave/node:latest`
+            - `yrorixw/rwnode:latest`
+            - `ghcr.io/YroriXW/rwnode:latest`
 
             Docker images:
-            - `remnawave/node:${{github.ref_name}}`
-            - `ghcr.io/remnawave/node:${{github.ref_name}}`
+            - `yrorixw/rwnode:${{github.ref_name}}`
+            - `ghcr.io/YroriXW/rwnode:${{github.ref_name}}`
