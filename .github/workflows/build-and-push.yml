@@ -106,7 +106,7 @@ jobs:
             $(printf 'ghcr.io/yrorixw/rwnode@sha256:%s ' *)
 
       - name: Inspect image
-        run: docker buildx imagetools inspect remnawave/node:${{ github.ref_name }}
+        run: docker buildx imagetools inspect yrorixw/rwnode:${{ github.ref_name }}
 
   create-release:
     needs: [merge]
