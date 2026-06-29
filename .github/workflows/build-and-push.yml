@@ -12,14 +12,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image:
-          - name: 'Core Latest'
-            tags: |
-              yrorixw/rwnode:latest
-              yrorixw/rwnode:${{github.ref_name}}
-              ghcr.io/yrorixw/rwnode:latest
-              ghcr.io/yrorixw/rwnode:${{github.ref_name}}
-            build_args: ''
+        include:
+          - platform: linux/amd64
+            runner: ubuntu-latest
     steps:
       - name: Prepare platform pair
         run: |
@@ -101,13 +96,13 @@ jobs:
         working-directory: ${{ runner.temp }}/digests
         run: |
           docker buildx imagetools create \
-            -t remnawave/node:latest \
-            -t remnawave/node:${{ github.ref_name }} \
-            $(printf 'yrorixwrw/rwnode@sha256:%s ' *)
+            -t yrorixw/rwnode:latest \
+            -t yrorixw/rwnode:${{ github.ref_name }} \
+            $(printf 'yrorixw/rwnode@sha256:%s ' *)
 
           docker buildx imagetools create \
-            -t ghcr.io/remnawave/node:latest \
-            -t ghcr.io/remnawave/node:${{ github.ref_name }} \
+            -t ghcr.io/yrorixw/rwnode:latest \
+            -t ghcr.io/yrorixw/rwnode:${{ github.ref_name }} \
             $(printf 'ghcr.io/yrorixw/rwnode@sha256:%s ' *)
 
       - name: Inspect image
